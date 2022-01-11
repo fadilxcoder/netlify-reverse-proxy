@@ -1,13 +1,13 @@
 [[redirects]]
   from = "/"
-  to = "https://movies-app.loca.lt/"
+  to = "https://movies-app.loca.lt/:splat"
   status = 200
   force = true
   headers = {Bypass-Tunnel-Reminder = "Netlify"}
 
 [[redirects]]
   from = "/index.html"
-  to = "https://movies-app.loca.lt/"
+  to = "https://movies-app.loca.lt/:splat"
   status = 200
   force = true
   headers = {Bypass-Tunnel-Reminder = "Netlify"}
