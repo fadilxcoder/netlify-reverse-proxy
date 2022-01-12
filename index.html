@@ -1,1 +1,36 @@
-<pre>Reverse Proxy !</pre>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Movie Streaming App</title>
+        <meta name="description" content="">
+        <meta name="author" content="fadilxcoder">
+        <meta property="og:title" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <link rel="icon" href="favicon.png">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <iframe></iframe>
+        <script>
+            async function getSrc() {
+                const res = await fetch("https://movies-app.loca.lt/", {
+                    method: 'GET',
+                    headers: {
+                        'Bypass-Tunnel-Reminder': "Netlify"
+                    }
+                });
+                const blob = await res.blob();
+                const urlObject = URL.createObjectURL(blob);
+                document.querySelector('iframe').setAttribute("src", urlObject)
+            }
+            getSrc();
+        </script>
+    </body>
+</html>
